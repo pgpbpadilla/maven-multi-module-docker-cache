@@ -12,7 +12,7 @@ RUN mvn -q -B -pl common install
 
 RUN mvn -q -ntp -B -pl user-app -am dependency:go-offline
 COPY user-app user-app
-RUN mvn -o -q -ntp -B -pl user-app package
+RUN mvn -q -ntp -B -pl user-app package
 
 FROM adoptopenjdk/openjdk11:centos-jre
 
