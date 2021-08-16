@@ -16,7 +16,7 @@ DOCKER_BUILDKIT='1' docker build \
     && docker run -it pgpb/user-app:local
 ```
 
-## Withut BuildKit
+## Without BuildKit
 
 ```shell
 docker build \
@@ -31,3 +31,4 @@ docker build \
 - [Creating Docker images with Spring Boot](https://spring.io/blog/2020/01/27/creating-docker-images-with-spring-boot-2-3-0-m1). Shows how to
 use a layered JAR to cache layers in the final stage of the multi-stage Dockerfile. 
 However, it does not cover how to cache layers for the first stage.
+- [Multi-stage Dockerfile](https://docs.docker.com/develop/develop-images/multistage-build/)
