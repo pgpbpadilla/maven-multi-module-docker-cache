@@ -6,12 +6,12 @@ COPY pom.xml pom.xml
 COPY common/pom.xml common/pom.xml
 COPY user-app/pom.xml user-app/pom.xml
 
-RUN mvn -q -ntp -B -pl common dependency:go-offline
+RUN mvn -q -ntp -B -pl common -am dependency:go-offline
 COPY common common
 RUN mvn -q -B -pl common install
 
+RUN mvn -q -ntp -B -pl user-app -am dependency:go-offline
 COPY user-app user-app
-RUN mvn -q -ntp -B -pl user-app dependency:go-offline
 RUN mvn -o -q -ntp -B -pl user-app package
 
 FROM adoptopenjdk/openjdk11:centos-jre
