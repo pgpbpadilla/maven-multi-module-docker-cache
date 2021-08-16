@@ -8,7 +8,7 @@ COPY user-app/pom.xml user-app/pom.xml
 
 RUN mvn -q -ntp -B -pl common dependency:go-offline
 COPY common common
-RUN mvn -o -q -B -pl common install
+RUN mvn -q -B -pl common install
 
 COPY user-app user-app
 RUN mvn -q -ntp -B -pl user-app dependency:go-offline
